@@ -30,12 +30,12 @@
                         <label class="col-md-2">性別</label>
                         <div class="col-md-10">
                             <div class="form-check form-check-inline">
-                                <input type="radio" class="form-check-input col-md-5" name="inlineRadioOptions" value="option1">
-                                <label class="form-check-label" for="inlineRadio1">男性</label> 
+                                <input type="radio" class="form-check-input col-md-5" name="gender" value="man">
+                                <label class="form-check-label" for="gender">男性</label> 
                             </div>
                              <div class="form-check form-check-inline">
-                                <input type="radio" class="form-check-input col-md-5" name="inlineRadioOptions" value="option2">
-                                <label class="form-check-label" for="inlineRadio2">女性</label> 
+                                <input type="radio" class="form-check-input col-md-5" name="gender" value="woman">
+                                <label class="form-check-label" for="gender">女性</label> 
                              </div>
                          </div>
                     </div>
@@ -48,7 +48,7 @@
                     <div class="form-group row">
                         <label class="col-md-2">自己紹介欄</label>
                         <div class="col-md-10">
-                            <textarea class="form-control" name="body" rows="5">{{ old('body') }}</textarea>
+                            <textarea class="form-control" name="introduction" rows="5">{{ old('introduction') }}</textarea>
                         </div>
                     </div>
                     
