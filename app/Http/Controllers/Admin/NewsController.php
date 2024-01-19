@@ -103,6 +103,8 @@ class NewsController extends Controller
         // 該当するデータを上書きして保存する
         $news->fill($news_form)->save();
         
+        
+        
          // 以下を追記
         $history = new History();
         $history->news_id = $news->id;
@@ -111,5 +113,17 @@ class NewsController extends Controller
 
         return redirect('admin/news');
     }
+    public function delete(Request $request)
+    {
+        // 該当するNews Modelを取得
+        $news = News::find($request->id);
+
+        // 削除する
+        $news->delete();
+
+        return redirect('admin/news/');
+    }
 }
+
+
 

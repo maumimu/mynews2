@@ -13,9 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+    // return view('welcome');
+// });
 use App\Http\Controllers\Admin\NewsController;
 Route::controller(NewsController::class)->prefix('admin')->name('admin.')->middleware('auth')->group(function() {
     Route::get('news/create', 'add')->name('news.add');
@@ -51,6 +51,6 @@ use App\Http\Controllers\NewsController as PublicNewsController;
 Route::get('/', [PublicNewsController::class, 'index'])->name('news.index');
 
 use App\Http\Controllers\ProfileController as PublicProfileController;
-Route::get('/', [PublicProfileController::class, 'index'])->name('profile.index');
+Route::get('/profiles', [PublicProfileController::class, 'index'])->name('profile.index');
 
 
