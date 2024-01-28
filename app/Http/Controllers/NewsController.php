@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 // 追記
 use App\Models\News;
 
+
 class NewsController extends Controller
 {
      public function index(Request $request)

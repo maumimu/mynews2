@@ -43,6 +43,13 @@ Route::controller(ProfileController::class)->prefix('admin')->name('admin.')->mi
    
 // });
 
+use App\Http\Controllers\CommentController;
+Route::controller(CommentController::class)->group(function() {
+    Route::get('comment/create', 'add')->name('comment.add');
+    Route::post('comment/create', 'create')->name('comment.create');
+});
+
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
@@ -52,5 +59,6 @@ Route::get('/', [PublicNewsController::class, 'index'])->name('news.index');
 
 use App\Http\Controllers\ProfileController as PublicProfileController;
 Route::get('/profiles', [PublicProfileController::class, 'index'])->name('profile.index');
+
 
 
