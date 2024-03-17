@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use App\Models\News;
 // 以下を追記
 use App\Models\History;
+use App\Models\Comment;
 
 use Carbon\Carbon;
 

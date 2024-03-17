@@ -13,6 +13,13 @@ class Comment extends Model
     
     public static $rules = array(
         'news_id' => 'required',
-        'text' => 'required',
+        'body' => 'required',
     );
+
+    public function news()
+    {
+        return $this->belongsTo(News::class);
+    }
+
+    
 }
