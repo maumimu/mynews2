@@ -46,7 +46,11 @@ Route::controller(ProfileController::class)->prefix('admin')->name('admin.')->mi
 use App\Http\Controllers\CommentController;
 Route::controller(CommentController::class)->group(function() {
     Route::get('comment/create', 'add')->name('comment.add');
-    Route::post('comment/create', 'create')->name('comment.create');
+    Route::post('comment/create/{news_id}', 'create')->name('comment.create');
+    Route::post('news_detail/{id}/comments', 'store')->name('comment.store');
+    
+    
+    
 });
 
 
@@ -56,6 +60,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 use App\Http\Controllers\NewsController as PublicNewsController;
 Route::get('/', [PublicNewsController::class, 'index'])->name('news.index');
+Route::get('/news_detail/{id}', [PublicNewsController::class, 'show'])->name('news_detail');
 
 use App\Http\Controllers\ProfileController as PublicProfileController;
 Route::get('/profiles', [PublicProfileController::class, 'index'])->name('profile.index');

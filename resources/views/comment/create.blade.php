@@ -23,8 +23,12 @@
                             <textarea class="form-control" name="text" rows="15">{{ old('text') }}</textarea>
                         </div>
                     </div>
+                    
                      @csrf
+
+                    <input type="hidden" name="news_id" value="{{ $news->id }}">
                     <input type="submit" class="btn btn-primary" value="コメントする">
+                    
                 </form>
             </div>
         </div>
