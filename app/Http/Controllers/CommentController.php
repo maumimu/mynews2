@@ -11,7 +11,8 @@ class CommentController extends Controller
 {
      public function add($news_id)
     {
-        return view('comment.create', ['news_id' => $news_id]);
+        $news = News::find($news_id);
+        return view('comment.create', ['news' => $news]);
     }
     
     public function create($news_id, Request $request)
@@ -33,8 +34,8 @@ class CommentController extends Controller
          $comment->save();
          
      
-     
-        return redirect('news_detail/{id}');
+         $news = News::find($news_id);
+        return redirect()->route('news_detail', ['id' => $news_id]);
     }
 
     public function index(Request $request)

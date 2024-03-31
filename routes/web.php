@@ -45,7 +45,7 @@ Route::controller(ProfileController::class)->prefix('admin')->name('admin.')->mi
 
 use App\Http\Controllers\CommentController;
 Route::controller(CommentController::class)->group(function() {
-    Route::get('comment/create', 'add')->name('comment.add');
+    Route::get('comment/create/{news_id}', 'add')->name('comment.add');
     Route::post('comment/create/{news_id}', 'create')->name('comment.create');
     Route::post('news_detail/{id}/comments', 'store')->name('comment.store');
     

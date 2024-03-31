@@ -41,7 +41,7 @@
                 <div class="comments">
                     <div class="row">
                         <div class="text-start col-md-6">
-                            <h1 class=fs-3>コメント</h1>
+                            <h4>コメント</h4>
                                 <ul>
                                     @foreach ($news->comments as $comment)
                                         <li>
